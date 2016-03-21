@@ -1,0 +1,379 @@
+html, body, #map-canvas {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.tdLeft {
+  padding-right: 10px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.tdRight {
+  padding: 0px;
+  text-align: left;
+  color: #cc0000;
+  font-size: 12px;
+}
+
+.infoWindowHeading {
+  border-bottom: thin solid #cc0000;
+  font-size: 18px;
+  padding: 4px 4px 4px 0px;
+  text-align: left;
+  margin: 5px 0;
+}
+
+.infoWindowBody {
+  padding: 0 13px 10px 0;
+}
+
+.navagisSupplyChainManagement {
+  background: url('../images/NavagisSupplyChainManagement.png');
+  background-repeat: no-repeat;
+}
+
+.TeslaLogo {
+  background: url('../images/TESLALogo.png') no-repeat;
+}
+
+.LogInLogOut {
+  background: url('../images/Right.png') no-repeat;
+}
+
+.main-container {
+  padding: 0px;
+  border: 0px;
+  width: 100%;
+  background-color: #B9B2AC;
+}
+
+.table-heading {
+  position: relative;
+  border-bottom: 3px solid #cc0000 !important;
+  background: rgba(0, 0, 0, 0) url("../images/transparent-bg.png") repeat scroll 0 0 !important;
+}
+
+.toggleCharts {
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  top: 3px;
+  padding: 7px;
+}
+
+.TeslaRed {
+  color: #cc0000;
+}
+
+.chartsModal {
+  /*****
+z-index: 9999999;
+position: absolute;
+margin-top: 60px;
+width: 600px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+*****/
+
+  top: 52px;
+  right: 0px;
+  position: fixed;
+  z-index: 99;
+  width: 100% !important;
+  padding-right: 250px;
+  padding-left: 250px;
+}
+
+.pullupTable span {
+  padding: 7px;
+}
+
+.pullupTable {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 3px;
+}
+
+#table-container {
+  bottom: 0;
+  right: 0px;
+  position: fixed;
+  z-index: 99;
+  width: 100% !important;
+}
+
+.navbar-brand {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar-brand-text {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar-container {
+  background: rgba(0, 0, 0, 0) url("../images/transparent-bg.png") repeat scroll 0 0 !important;
+  border-bottom: 3px solid #cc0000;
+}
+
+.navbar-content {
+  float: left;
+  width: 33%;
+  z-index: 12;
+}
+
+.navbar-content-left {
+  width: 30%;
+  position: absolute;
+  left: 0px;
+  padding-left: 20px !important;
+  z-index: 1;
+}
+
+.navbar-content-right {
+  width: 30%;
+  position: absolute;
+  right: 0px;
+  padding-right: 0px !important;
+  z-index: 12;
+}
+
+.navbar-content-right a {
+  color: #96141a !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.navbar-content-right a:hover {
+  color: #ffffff !important;
+}
+
+.navbar-content-center {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.tesla-logo-pulldown, .tesla-logo {
+  cursor: pointer;
+}
+
+.navbar-right {
+  margin-right: 0px;
+}
+
+#navbar .navbar-right li span {
+  color: #333;
+  display: block;
+  line-height: 15px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  text-align: right;
+}
+
+#navbar .navbar-right li span font {
+  font-size: 13px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #cc0000;
+  color: #fff;
+}
+
+.form-header {
+  border-bottom: thin solid #cc0000;
+  margin-bottom: 10px;
+  padding: 10px 0 0;
+  text-align: center;
+}
+
+.form-header h3 {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 18px;
+}
+
+#login-body {
+  background-image: url(../images/tesla-model-s.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#login {
+  border: none;
+  background-color: #cc0000;
+  color: #ffffff;
+  width: 100%;
+}
+
+#login:hover {
+  border: none;
+  background-color: #bf0000;
+  color: #ffffff;
+}
+
+.navagis-logo {
+  margin-left: 5px;
+}
+
+#messages li {
+  color: #8d1d1d;
+}
+
+#login-content {
+  background: rgba(0, 0, 0, 0) url("../images/transparent-bg.png") repeat scroll 0 0 !important;
+  border-bottom: 6px solid #8d1d1d;
+  border-radius: 0 !important;
+  border-top: medium none !important;
+  box-shadow: none !important;
+  display: block;
+  margin-left: auto;
+  margin-right: 40px;
+  margin-top: 50px;
+  padding: 0 !important;
+  position: relative;
+  width: 470px;
+}
+
+#message-container {
+  height: 20px;
+  position: relative;
+  top: -3px;
+}
+
+.poweredby-text {
+  color: #b4191f;
+  display: block;
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-top: 0;
+  text-align: left;
+}
+
+.login-form {
+  width: 91%;
+}
+
+.login-form .form-group {
+  margin-bottom: 10px;
+}
+
+.login-form input[type=text] {
+
+}
+
+.errors li {
+  list-style-type: none;
+  margin-left: 5px;
+}
+
+.tesla-login-logo {
+  position: relative;
+  left: 0px;
+}
+
+.horizontal-div {
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.vertical-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+tr.error {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+
+tr.blue {
+  color: #ffffff;
+}
+
+.clients_table .btn-info {
+  border: none;
+  background-color: #cc0000;
+  color: #ffffff;
+  min-width: 60px;
+}
+
+.clients_table .btn-info:hover {
+  border: none;
+  background-color: #bf0000;
+  color: #ffffff;
+}
+
+.right {
+  float: right;
+}
+
+#grid_view_reset_page_btn {
+  position: absolute;
+  right: 10px;
+}
+
+.clients_selector_pagination .btn-group {
+  position: relative;
+  width: 100%;
+}
+
+.sortable_column {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 5px 10px !important;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+  color: #eee;
+  font-size: 12px;
+  font-family: serif;
+}
+
+:-moz-placeholder {
+  font-style: italic;
+  color: #eee;
+  font-size: 12px;
+  font-family: serif;
+}
+
+::-moz-placeholder {
+  font-style: italic;
+  color: #eee;
+  font-size: 12px;
+  font-family: serif;
+}
+
+:-ms-input-placeholder {
+  font-style: italic;
+  color: #eee;
+  font-size: 12px;
+  font-family: serif;
+}
+
+.clients_table table tbody tr {
+  font-size: 12px;
+}
+
+.panel {
+  background: none !important;
+}
+
+.clients_table {
+  background: #fff;
+}

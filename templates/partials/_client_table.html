@@ -1,0 +1,227 @@
+<div class="container-fluid" id="table-container" ng-show="panel_display.client_table">
+    <div class="row" style="margin-left: 15px;margin-right: 15px;">
+        <div class="col-mod-12">
+            <div class="panel panel-default">
+                <div class="panel-heading table-heading">
+                    <h3 class="panel-title">
+                        <img src="images/tesla-partlist.png" alt="Tesla Part List"/>
+                    </h3>
+
+                    <div id="chartsToggle" class="toggleCharts" charts-status="off" ng-model="chartsFlag"
+                         ng-click="chartsFlagListener()">
+                        <span class="TeslaBlack glyphicon glyphicon-stats"></span>
+                        <span class="TeslaRed glyphicon glyphicon-stats"></span>
+                    </div>
+                    <div class="pullupTable" pullup-status="off">
+                        <span class="showup glyphicon glyphicon-chevron-up"></span>
+                        <span class="showdown glyphicon glyphicon-chevron-down"></span>
+                    </div>
+                </div>
+                <div class="clients_table" ng-show="clients_table_body_display">
+                    <table class="table table-condensed tabled-striped" style="font-size: x-small; margin-bottom: 0px;">
+                        <thead>
+                        <tr>
+                            <th ng-click="clients_order_by_field = 'PartNumber'; clients_reverse_sort = !clients_reverse_sort;  _begin_update_clients_listing();"
+                                class="sortable_column">
+                                Product
+                                <span class="pull-right" ng-show="clients_order_by_field != 'PartNumber'"><i
+                                        class="fa fa-sort"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'PartNumber' && clients_reverse_sort == false"><i
+                                        class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'PartNumber' && clients_reverse_sort == true"><i
+                                        class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'Material'; clients_reverse_sort = !clients_reverse_sort;  _begin_update_clients_listing();"
+                                class="sortable_column">
+                                Material
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Material'"><i
+                                        class="fa fa-sort"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Material' && clients_reverse_sort == false"><i
+                                        class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Material' && clients_reverse_sort == true"><i
+                                        class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'Gauge'; clients_reverse_sort = !clients_reverse_sort;  _begin_update_clients_listing();"
+                                class="sortable_column">
+                                Gauge
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Gauge'"><i
+                                        class="fa fa-sort"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Gauge' && clients_reverse_sort == false"><i
+                                        class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Gauge' && clients_reverse_sort == true"><i
+                                        class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'Volume'; clients_reverse_sort = !clients_reverse_sort; _begin_update_clients_listing();"
+                                class="sortable_column">
+                                Volume
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Volume'"><i
+                                        class="fa fa-sort"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Volume' && clients_reverse_sort == false"><i
+                                        class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Volume' && clients_reverse_sort == true"><i
+                                        class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'MODEL'; clients_reverse_sort = !clients_reverse_sort; _begin_update_clients_listing();"
+                                class="sortable_column">
+                                Model
+                                <span class="pull-right" ng-show="clients_order_by_field != 'MODEL'"><i
+                                        class="fa fa-sort"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'MODEL' && clients_reverse_sort == false"><i
+                                        class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'MODEL' && clients_reverse_sort == true"><i
+                                        class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'Coil_Supplier'; clients_reverse_sort = !clients_reverse_sort; _begin_update_clients_listing();"
+                                class="sortable_column">
+                                Coil Supplier
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Coil_Supplier'"><i
+                                        class="fa fa-sort"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Coil_Supplier' && clients_reverse_sort == false"><i
+                                        class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Coil_Supplier' && clients_reverse_sort == true"><i
+                                        class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'Stamping_Supplier'; clients_reverse_sort = !clients_reverse_sort; _begin_update_clients_listing();"
+                                class="sortable_column">
+                                Stamping Supplier
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Stamping_Supplier'"><i
+                                        class="fa fa-sort"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Stamping_Supplier' && clients_reverse_sort == false"><i
+                                        class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right"
+                                      ng-show="clients_order_by_field == 'Stamping_Supplier' && clients_reverse_sort == true"><i
+                                        class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <!-- COMMENTED OUT Production_LT Logistics_LT and Capacity
+                            <th ng-click="clients_order_by_field = 'Production_LT'; clients_reverse_sort = !clients_reverse_sort; _begin_update_clients_listing();" class="sortable_column">
+                                Production LT
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Production_LT'"><i class="fa fa-sort"></i></span>
+                                <span class="pull-right" ng-show="clients_order_by_field == 'Production_LT' && clients_reverse_sort == false"><i class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right" ng-show="clients_order_by_field == 'Production_LT' && clients_reverse_sort == true"><i class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'Logistics_LT'; clients_reverse_sort = !clients_reverse_sort; _begin_update_clients_listing();" class="sortable_column">
+                                Logistics LT
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Logistics_LT'"><i class="fa fa-sort"></i></span>
+                                <span class="pull-right" ng-show="clients_order_by_field == 'Logistics_LT' && clients_reverse_sort == false"><i class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right" ng-show="clients_order_by_field == 'Logistics_LT' && clients_reverse_sort == true"><i class="fa fa-sort-desc"></i></span>
+                            </th>
+                            <th ng-click="clients_order_by_field = 'Capacity'; clients_reverse_sort = !clients_reverse_sort; _begin_update_clients_listing();" class="sortable_column">
+                                Capacity
+                                <span class="pull-right" ng-show="clients_order_by_field != 'Capacity'"><i class="fa fa-sort"></i></span>
+                                <span class="pull-right" ng-show="clients_order_by_field == 'Capacity' && clients_reverse_sort == false"><i class="fa fa-sort-asc"></i></span>
+                                <span class="pull-right" ng-show="clients_order_by_field == 'Capacity' && clients_reverse_sort == true"><i class="fa fa-sort-desc"></i></span>
+                            </th>
+                                COMMENTED OUT Production_LT Logistics_LT and Capacity
+                            -->
+                        </tr>
+                        <tr>
+                            <th><input class="form-control input-sm" type="text" placeholder="filter Product#"
+                                       style="margin-bottom: 0px;" ng-model="search_clients.PartNumber"
+                                       ng-change="search_clients_update()"></th>
+                            <th><input class="form-control input-sm" type="text" placeholder="filter Material"
+                                       style="margin-bottom: 0px;" ng-model="search_clients.Material"
+                                       ng-change="search_clients_update()"></th>
+                            <th><input class="form-control input-sm" type="text" placeholder="filter Gauge"
+                                       style="margin-bottom: 0px;" ng-model="search_clients.Gauge"
+                                       ng-change="search_clients_update()"></th>
+                            <th><input class="form-control input-sm" type="text" placeholder="filter Volume"
+                                       style="margin-bottom: 0px;" ng-model="search_clients.Volume"
+                                       ng-change="search_clients_update()"></th>
+                            <th><input class="form-control input-sm" type="text" placeholder="filter Model"
+                                       style="margin-bottom: 0px;" ng-model="search_clients.MODEL"
+                                       ng-change="search_clients_update()"></th>
+                            <th><input class="form-control input-sm" type="text" placeholder="filter Coil"
+                                       style="margin-bottom: 0px;" ng-model="search_clients.Coil_Supplier"
+                                       ng-change="search_clients_update()"></th>
+                            <th><input class="form-control input-sm" type="text" placeholder="filter Stamping"
+                                       style="margin-bottom: 0px;" ng-model="search_clients.Stamping_Supplier"
+                                       ng-change="search_clients_update()"></th>
+                            <!-- COMMENTED OUT Production_LT Logistics_LT and Capacity
+                            <td> c.Production_LT     </td>
+                            <td> c.Logistics_LT	   </td>
+                            <td> c.Capacity		   </td>
+                                COMMENTED OUT Production_LT Logistics_LT and Capacity
+                            -->
+                        </tr>
+                        </thead>
+
+                        <tbody style="cursor: pointer;">
+                        <!--
+                        <tr ng-repeat="c in clients"
+                            ng-click="clientSelected_EventHandler(c)"
+                            ng-class="{client_selected_row: c === client_selected}">
+                        -->
+
+                        <tr ng-repeat="c in processedClients | limitTo: clients_per_page"
+                            ng-class="highlighted_rows[c.PartNumber]"
+                            ng-click="report_PartNumberSelected_EventHandler(c)">
+                            <td>{{ c.PartNumber  	   }}</td>
+                            <td>{{ c.Material 	   	   }}</td>
+                            <td>{{ c.Gauge	   	   	   }}</td>
+                            <td>{{ c.Volume  	   	   }}</td>
+                            <td>{{ c.MODEL		   	   }}</td>
+                            <td>{{ c.Coil_Supplier 	   }}</td>
+                            <td>{{ c.Stamping_Supplier }}</td>
+                            <!-- COMMENTED OUT Production_LT Logistics_LT and Capacity
+                            <td>{{ c.Production_LT     }}</td>
+                            <td>{{ c.Logistics_LT	   }}</td>
+                            <td>{{ c.Capacity		   }}</td>
+                                 COMMENTED OUT Production_LT Logistics_LT and Capacity
+                            -->
+                        </tr>
+
+                        <!--
+                        <tr ng-repeat="c in filtered_clients = (clients|filter:search_clients) |
+                                                                orderBy:clients_order_by_field:clients_reverse_sort |
+                                                                startFrom:clients_current_page*clients_page_size |
+                                                                limitTo: clients_page_size"
+                            ng-click="clientSelected_EventHandler(c)"
+                            ng-class="{client_selected_row: c === client_selected}">
+                            <td>{{ c.display_name }}</td>
+                            <td>{{ c.extref_id }}</td>
+                            <td>{{ c.address}}</td>
+                            <td>{{ c.phone_number }}</td>
+                        </tr>
+                        -->
+                        </tbody>
+                    </table>
+
+                    <div class="clients_selector_pagination" style="padding: 5px;">
+                        <div style="font-size: x-small; margin-bottom: 10px;">
+										<span>
+											Page {{ clients_current_page }} 0f {{ max_pages }}
+										</span>
+                        </div>
+                        <div class="btn-group btn-group-xs">
+                            <button id="grid_view_prev_page_btn" class="btn btn-info" ng-disabled="disablePrev"
+                                    ng-click="Clients_PrevPage()">
+                                &larr; Prev
+                            </button>
+                            <button id="grid_view_next_page_btn" class="btn btn-info" ng-disabled="disableNext"
+                                    ng-click="Clients_NextPage()">
+                                Next &rarr;
+                            </button>
+
+                            <button id="grid_view_reset_page_btn" class="btn btn-info right" ng-click="RefresherOrb()">
+                                Clear Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
